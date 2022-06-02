@@ -65,7 +65,7 @@ The function `updateSankeyData` uses `setSankeyData` to change the value of `san
         </div>
 ```
 
-- We added a `div` that now serves as the root if the `SankeyState` component.  
+- We added a `div` that now serves as the root of the `SankeyState` component.  
 - We added an `h1` for a title
 - We added another `div` that hold a single `button`
 - On `button` onClick, we call the function `updateSankeyData` defined previously
@@ -139,7 +139,7 @@ Add this line
 import { SankeyState } from './components/SankeyState';
 ```
 
-Remove the content under `<header>` tag and put in `<SankeyState/>`
+Remove the content under the `<header>` tag and put in `<SankeyState/>`
 
 Optional: add a `style` tag to `header` to switch the color scheme from black to white.
 

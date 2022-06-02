@@ -26,7 +26,7 @@ Add this line
 import { Hello } from './components/Hello';
 ```
 
-Remove the content under `<header>` tag and put in `<Hello/>`
+Remove the content under the `<header>` tag and put in `<Hello/>`
 
 ### App.js
 ```

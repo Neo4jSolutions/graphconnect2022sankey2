@@ -298,7 +298,7 @@ Add this line
 import { SankeyApollo } from './components/SankeyApollo';
 ```
 
-Remove the content under `<header>` tag and put in `<SankeyApollo/>`
+Remove the content under the `<header>` tag and put in `<SankeyApollo/>`
 
 12. Go to the Terminal and run the React app from the `sankey-demo` directory.
 

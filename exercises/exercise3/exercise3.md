@@ -51,7 +51,7 @@ Add this line
 import { Sankey } from './components/Sankey';
 ```
 
-Remove the content under `<header>` tag and put in `<Sankey/>`
+Remove the content under the `<header>` tag and put in `<Sankey/>`
 
 ### App.js
 ```
