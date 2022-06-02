@@ -1,0 +1,19 @@
+{
+  "name": "graphql_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Eric Monk <eric.monk@neotechnology.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@neo4j/graphql": "^3.2.3",
+    "apollo-server": "^3.7.0",
+    "dotenv": "^16.0.1",
+    "graphql": "^16.5.0",
+    "neo4j-driver": "^4.4.5"
+  }
+}
