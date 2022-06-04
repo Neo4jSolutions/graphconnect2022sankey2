@@ -27,7 +27,7 @@ npm install @neo4j/graphql neo4j-driver graphql apollo-server dotenv
 
 5. Add a `.env` file to the `graphql_api` folder. 
 
-Use this is as the content for your .env file.
+Use the following for your .env file if you have set up the **local Neo4j** database.
 
 ```
 NEO4J_USER=neo4j
@@ -38,11 +38,22 @@ NEO4J_DATABASE=neo4j
 GRAPHQL_LISTEN_PORT=4001
 ```
 
+If you are using the **Neo4j Aura** database, please use these settings:
+
+```
+NEO4J_USER=readonly
+NEO4J_PASSWORD=password
+NEO4J_URI=neo4j+s://033df296.databases.neo4j.io
+NEO4J_DATABASE=neo4j
+
+GRAPHQL_LISTEN_PORT=4001
+```
+
 These are environment variables that will be used in your API application. Make sure you save the file.
 
 6. Add an `index.js` file with the following contents:
 
-```
+```javascript
 const { gql, ApolloServer } = require("apollo-server");
 const { Neo4jGraphQL } = require("@neo4j/graphql");
 const neo4j = require("neo4j-driver");
@@ -93,7 +104,7 @@ GraphQL server ready on http://localhost:4001/
 
 10. Under `Operation` add the following:
 
-```
+```graphql
 query Geos {
   geos {
     id
@@ -104,7 +115,7 @@ query Geos {
 
 11. Click the blue `Geos` button to run the GraphQL. You should get a response back similar to this:
 
-```
+```json
 {
   "data": {
     "geos": [

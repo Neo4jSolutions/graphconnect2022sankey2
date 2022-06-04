@@ -10,7 +10,7 @@ npm install --save react-google-charts
 2. Create a file called `Sankey.js` under `/components`
 
 ### components/Sankey.js
-```
+```jsx
 import React from "react";
 import { Chart } from "react-google-charts";
 
@@ -47,14 +47,14 @@ export function Sankey(props) {
 3. Modify App.js
 
 Add this line
-```
+```jsx
 import { Sankey } from './components/Sankey';
 ```
 
-Remove the content under the `<header>` tag and put in `<Sankey/>`
+Remove the content under the `<header>` tag and put in `<Sankey/>`. This is what your `App.js` will look like after the changes:
 
 ### App.js
-```
+```jsx
 import './App.css';
 import { Sankey } from './components/Sankey';
 

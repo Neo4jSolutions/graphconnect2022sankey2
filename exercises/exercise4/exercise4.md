@@ -5,13 +5,13 @@
 
 2. Add `useState` as an import 
 
-```
+```jsx
 import React, { useState } from "react";
 ```
 
 3. Add a `data2` after `data`
 
-```
+```jsx
 export const data2 = [
   ["From", "To", "Weight"],
   ["A", "X", 1],
@@ -29,13 +29,13 @@ export const data2 = [
 
 4. Modify `export function Sankey` to `export function SankeyState`
 
-```
+```jsx
 export function SankeyState(props) {
 ```
 
 5. Add the following after `export function SankeyState(props) {`
 
-```
+```jsx
     const [sankeyData, setSankeyData] = useState(data);
 
     const updateSankeyData = () => {
@@ -49,7 +49,8 @@ The function `updateSankeyData` uses `setSankeyData` to change the value of `san
 
 6. Change the `return` to the following:
 
-```
+```jsx
+    return (
         <div style={{width:'99%'}}>
           <h1>Sankey Demo</h1>
           <div>
@@ -63,16 +64,19 @@ The function `updateSankeyData` uses `setSankeyData` to change the value of `san
             options={options}
           />
         </div>
+    )
 ```
 
 - We added a `div` that now serves as the root of the `SankeyState` component.  
 - We added an `h1` for a title
-- We added another `div` that hold a single `button`
+- We added another `div` that holds a single `button`
 - On `button` onClick, we call the function `updateSankeyData` defined previously
 - We changed the `data` property of `Chart` to be dependent on `sankeyData` instead of `data`
 
+This is what your `SankeyState.js` will look like after the changes:
+
 ### components/SankeyState.js
-```
+```jsx
 import React, { useState } from "react";
 import { Chart } from "react-google-charts";
 
@@ -135,7 +139,7 @@ export function SankeyState(props) {
 7. Modify App.js
 
 Add this line
-```
+```jsx
 import { SankeyState } from './components/SankeyState';
 ```
 
@@ -143,8 +147,10 @@ Remove the content under the `<header>` tag and put in `<SankeyState/>`
 
 Optional: add a `style` tag to `header` to switch the color scheme from black to white.
 
+This is what your `App.js` will look like after the changes:
+
 ### App.js
-```
+```jsx
 import './App.css';
 import { SankeyState } from './components/SankeyState';
 

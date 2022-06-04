@@ -15,7 +15,7 @@ npm install @apollo/client graphql
 
 4. Add the following import statement after the other imports:
 
-```
+```jsx
 import {
   ApolloClient,
   InMemoryCache,
@@ -25,7 +25,7 @@ import {
 
 5. After the imports add the following:
 
-```
+```jsx
 const client = new ApolloClient({
   uri: 'http://localhost:4001/graphql',
   cache: new InMemoryCache({
@@ -46,7 +46,7 @@ This sets up our connection to the GraphQL API listening on port 4001.
 
 6. Under `root.render` put `ApolloProvider` around `App` as follows:
 
-```
+```jsx
     <ApolloProvider client={client}>
       <App />
     </ApolloProvider>
@@ -57,7 +57,7 @@ This enables Apollo Client functions like `useQuery` and `useLazyQuery` we use l
 7. The complete file should now look like:
 
 ### index.js
-```
+```jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -105,7 +105,7 @@ reportWebVitals();
 
 2. Add the following to the imports section:
 
-```
+```jsx
 import {
   useLazyQuery,
   gql
@@ -114,7 +114,7 @@ import {
 
 3. After the imports section add the following:
 
-```
+```jsx
 const SANKEY_BY_GEO_TYPE_ALL_COMMODITIES_TRANSPORT_MODE = gql`
   query SankeyByGeoTypeAllCommoditiesByTransportMode($geoType: String!) {
     sankeyByGeoTypeAllCommoditiesByTransportMode(geoType: $geoType) {
@@ -132,7 +132,7 @@ This is the same GraphQL we used in the Apollo Sandbox.
 
 5. Add the lazy query declaration after the line with `useState`
 
-```
+```jsx
     const [getSankeyGeoTypeAllCommoditiesTransportMode, sankeyStatus] = useLazyQuery(SANKEY_BY_GEO_TYPE_ALL_COMMODITIES_TRANSPORT_MODE);
 ```
 
@@ -140,7 +140,7 @@ The function `useLazyQuery` returns a function `getSankeyGeoTypeAllCommoditiesTr
 
 6. Add the following function after the line you just added:
 
-```
+```jsx
     const geoTypeAllCommoditiesTransportModeClick = () => {
       getSankeyGeoTypeAllCommoditiesTransportMode({
         variables: { 
@@ -175,7 +175,7 @@ Detailed explanation of code:
 
 7. Before the return add the following:
 
-```
+```jsx
     if (sankeyStatus.loading) return 'Loading...';
     if (sankeyStatus.error) return `Error! ${sankeyStatus.error.message}`;    
 ```
@@ -184,7 +184,7 @@ These help process Apollo loading and error states.
 
 8. After the `Update Sankey` button add the following `button` definition
 
-```
+```jsx
             <button style={{margin: '10px'}} onClick={() => geoTypeAllCommoditiesTransportModeClick()}>GeoType All Commodities Transport Mode</button>
 ```
 
@@ -195,7 +195,7 @@ This button calls the `geoTypeAllCommoditiesTransportModeClick` function when cl
 10. Save the `SankeyApollo` file. The complete should now look like:
 
 ### SankeyApollo.js
-```
+```jsx
 import React, { useState } from "react";
 import { Chart } from "react-google-charts";
 import {
@@ -294,11 +294,29 @@ export function SankeyApollo(props) {
 11. Modify App.js
 
 Add this line
-```
+```jsx
 import { SankeyApollo } from './components/SankeyApollo';
 ```
 
-Remove the content under the `<header>` tag and put in `<SankeyApollo/>`
+Remove the content under the `<header>` tag and put in `<SankeyApollo/>`. This is what your `App.js` will look like after the changes:
+
+### App.js
+```jsx
+import './App.css';
+import { SankeyApollo } from './components/SankeyApollo';
+
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header" style={{background: 'white', color: 'black'}}>
+        <SankeyApollo/>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
 
 12. Go to the Terminal and run the React app from the `sankey-demo` directory.
 

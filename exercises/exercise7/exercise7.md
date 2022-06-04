@@ -7,7 +7,7 @@
 
 3. Replace the contents of `const typeDefs = gql` as follows:
 
-```
+```javascript
 const typeDefs = gql`
   type Geo {
     id: String!
@@ -84,7 +84,7 @@ node index.js
 
 6. Under `Operation` put the following:
 
-```
+```graphql
 query SankeyByGeoTypeAllCommoditiesByTransportMode($geoType: String!) {
   sankeyByGeoTypeAllCommoditiesByTransportMode(geoType: $geoType) {
     start
