@@ -4,8 +4,8 @@
 You can choose to set up the Neo4j database locally or you can use an existing Neo4j Aura database. 
 
 * Neo4j Local Database: follow the instructions below - 
-[Instructions for Setting up the Neo4j Database locally](#Instructions for Setting up the Neo4j Database locally)
-* Neo4j Aura Database: skip to the bottom - [Query the Data](#Query the Data)
+[Instructions for Setting up the Neo4j Database locally](#instructions-for-setting-up-the-neo4j-database-locally)
+* Neo4j Aura Database: skip to the bottom - [Query the Data](#query-the-data)
 
 # Instructions for Setting up the Neo4j Database locally
 
@@ -122,6 +122,8 @@ SET stat += {
 * If you are using the Neo4j Aura database, please go here:
 
 https://browser.neo4j.io/?connectURL=neo4j%2Bs%3A%2F%2Fneo4j%40033df296.databases.neo4j.io%2F&_ga=2.79294291.690573303.1654353665-207984786.1641826653&_gac=1.19861962.1652485996.Cj0KCQjwg_iTBhDrARIsAD3Ib5i_w2OUPoawle7qu4nmzsfomvV0gNnOHXhcH2cuW-PDfz3a5AtISaEaAo1aEALw_wcB
+
+* Enter the credentials: Username: `readonly`, Password: `password` to login.
 
 2. Run this Cypher statement to verify you can get results back.
 
